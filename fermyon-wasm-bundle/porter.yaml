@@ -4,13 +4,13 @@ schemaVersion: 1.0.1
 name: fermyon-wasm-hello
 version: 0.1.0
 description: ""
-registry: localhost:5000
+registry: localhost:5000 
 mixins:
   - arm
+  - az
   - exec
   - terraform:
       clientVersion: 1.2.9
-      workingDir: ./terraform
 parameters:
   - name: location
     type: string
@@ -31,14 +31,18 @@ parameters:
     type: string
     default: porter-terraform
 credentials:
-  - name: subscription_id
-    env: AZURE_SUBSCRIPTION_ID
-  - name: tenant_id
-    env: AZURE_TENANT_ID
-  - name: client_id
-    env: AZURE_CLIENT_ID
-  - name: client_secret
-    env: AZURE_CLIENT_SECRET
+  - name: subscription
+    description: Azure subscription id
+    env: ARM_SUBSCRIPTION_ID
+  - name: tenant
+    description: Azure service principal tenant id
+    env: ARM_TENANT_ID
+  - name: client
+    description: Azure service principal client id
+    env: ARM_CLIENT_ID
+  - name: client-secret
+    description: Azure service principal client secret
+    env: ARM_CLIENT_SECRET
 outputs:
   - name: dns_domain
     type: string
@@ -67,25 +71,8 @@ state:
     path: terraform/terraform.tfvars.json
 
 install:
-  - arm:
-      description: Create an Azure Storage Account
-      type: arm
-      template: arm/storage.json
-      name: ${ bundle.parameters.storage_account_name }
-      resourceGroup: ${ bundle.parameters.storage_rg }
-      parameters:
-        location: ${ bundle.parameters.location }
-        storageAccountName: ${ bundle.parameters.storage_account_name }
-        storageContainerName: ${ bundle.parameters.storage_container_name }
-      outputs:
-        - name: storage_account_key
-          key: storage_account_key
   - terraform:
-      backendConfig: null
-      key: ${ bundle.name }}.tfstate
-      storage_account_name: ${ bundle.parameters.storage_account_name }
-      container_name: ${ bundle.parameters.storage_container_name }
-      access_key: ${ bundle.outputs.storage_account_key }
+      logLevel: TRACE
       outputs:
         - name: dns_domain
         - name: hippo_username
