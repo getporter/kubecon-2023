@@ -44,15 +44,15 @@ credentials:
     description: Azure service principal client secret
     env: ARM_CLIENT_SECRET
 outputs:
-  - name: dns_domain
+  - name: dns_host
     type: string
     applyTo:
       - install
-  - name: hippo_username
+  - name: hippo_admin_username
     type: string
     applyTo:
       - install
-  - name: hippo_password
+  - name: hippo_admin_password
     type: string
     applyTo:
       - install
@@ -61,6 +61,10 @@ outputs:
     applyTo:
       - install
   - name: bindle_url
+    type: string
+    applyTo:
+      - install
+  - name: fqdn
     type: string
     applyTo:
       - install
@@ -75,7 +79,7 @@ install:
       logLevel: TRACE
       outputs:
         - name: dns_host
-        - name: hippo_admin_password
+        - name: hippo_admin_username
         - name: hippo_admin_password
         - name: hippo_url
         - name: bindle_url
