@@ -89,7 +89,7 @@ install:
       command: "bash"
       arguments:
         - "waitForHippo.sh"
-        - "{{bundle.output.hippo_url}}"
+        - ${ bundle.outputs.hippo_url }
 upgrade:
   - exec:
       description: World 2.0
