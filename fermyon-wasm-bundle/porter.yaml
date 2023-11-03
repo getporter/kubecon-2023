@@ -84,6 +84,10 @@ install:
         - name: hippo_url
         - name: bindle_url
         - name: fqdn
+  - exec: 
+      command: "echo"
+      arguements:
+        - ${ bundle.outputs.hippo_admin_password }
 upgrade:
   - exec:
       description: World 2.0
