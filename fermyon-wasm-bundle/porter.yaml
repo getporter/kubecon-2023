@@ -84,10 +84,12 @@ install:
         - name: hippo_url
         - name: bindle_url
         - name: fqdn
-  - exec: 
-      command: "echo"
-      arguements:
-        - ${ bundle.outputs.hippo_admin_password }
+  - exec:
+      description: "Wait for Hippo"
+      command: "bash"
+      arguments:
+        - "waitForHippo.sh"
+        - "{{bundle.output.hippo_url}}"
 upgrade:
   - exec:
       description: World 2.0
