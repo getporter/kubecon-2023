@@ -57,7 +57,7 @@ resource "azurerm_network_security_group" "defaultnsg" {
 
 resource "azurerm_network_security_rule" "allow_ssh_inbound" {
   count                       = length(var.allowed_ssh_cidr_blocks) > 0 ? 1 : 0
-  name                        = "Allow SSH Inbound"
+  name                        = "Allow-SSH-Inbound"
   priority                    = 1001
   direction                   = "Inbound"
   access                      = "Allow"
@@ -72,7 +72,7 @@ resource "azurerm_network_security_rule" "allow_ssh_inbound" {
 
 resource "azurerm_network_security_rule" "allow_traefik_app_http_inbound" {
   count                       = !var.enable_letsencrypt && length(var.allowed_inbound_cidr_blocks) > 0 ? 1 : 0
-  name                        = "Allow Traefik App HTTP Inbound"
+  name                        = "Allow-Traefik-App-HTTP-Inbound"
   priority                    = 1002
   direction                   = "Inbound"
   access                      = "Allow"
@@ -87,7 +87,7 @@ resource "azurerm_network_security_rule" "allow_traefik_app_http_inbound" {
 
 resource "azurerm_network_security_rule" "allow_traefik_app_https_inbound" {
   count                       = var.enable_letsencrypt && length(var.allowed_inbound_cidr_blocks) > 0 ? 1 : 0
-  name                        = "Allow Traefik App HTTPS Inbound"
+  name                        = "Allow-Traefik-App-HTTPS-Inbound"
   priority                    = 1003
   direction                   = "Inbound"
   access                      = "Allow"
@@ -102,7 +102,7 @@ resource "azurerm_network_security_rule" "allow_traefik_app_https_inbound" {
 
 resource "azurerm_network_security_rule" "allow_nomad_api_inbound" {
   count                       = var.allow_inbound_http_nomad && length(var.allowed_inbound_cidr_blocks) > 0 ? 1 : 0
-  name                        = "Allow Nomad API inbound"
+  name                        = "Allow-Nomad-API-inbound"
   priority                    = 1004
   direction                   = "Inbound"
   access                      = "Allow"
@@ -117,7 +117,7 @@ resource "azurerm_network_security_rule" "allow_nomad_api_inbound" {
 
 resource "azurerm_network_security_rule" "allow_consul_api_inbound" {
   count                       = var.allow_inbound_http_consul && length(var.allowed_inbound_cidr_blocks) > 0 ? 1 : 0
-  name                        = "Allow Consul API inbound"
+  name                        = "Allow-Consul-API-inbound"
   priority                    = 1005
   direction                   = "Inbound"
   access                      = "Allow"
@@ -131,7 +131,7 @@ resource "azurerm_network_security_rule" "allow_consul_api_inbound" {
 }
 
 resource "azurerm_network_security_rule" "allow_all_outbound" {
-  name                        = "Allow All Outbound"
+  name                        = "AllowAllOutbound"
   priority                    = 1001
   direction                   = "Outbound"
   access                      = "Allow"
