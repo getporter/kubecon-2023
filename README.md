@@ -17,11 +17,11 @@ If your deployments happen on Kubernetes clusters, you can still use Porter whil
 Porter is already getting some interesting use cases. We’re going to list the ones we know about below. We also encourage users of Porter out there to reach out to us and tell us about how they’re using Porter.
 
 
-<img align="left" src="/imgs/microsoft.png" width="300px" />
+<img align="left" src="/imgs/microsoft.png" height="194px" width="300px" />
 Porter is used by the [Azure TRE](https://microsoft.github.io/AzureTRE/v0.11.0/azure-tre-overview/architecture/) team where Porter bundles are used to create trusted research environments in hospitals and schools across countries.
 
 
-<img align="left" src="/imgs/f5-logo.svg" width="300px" />
+<img align="left" src="/imgs/f5-logo.svg" height="194px" width="300px" />
 At [F5](https://www.f5.com/) Porter is used for …
 
 
