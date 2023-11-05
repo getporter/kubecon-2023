@@ -11,6 +11,7 @@ mixins:
   - exec
   - terraform:
       clientVersion: 1.2.9
+  - spin
 parameters:
   - name: location
     type: string
@@ -90,6 +91,15 @@ install:
       arguments:
         - "waitForHippo.sh"
         - ${ bundle.outputs.hippo_url }
+  - spin:
+      workDir: hello-kubecon
+      platformURL: "${ bundle.outputs.hippo_url }"
+      hippoUsername: ${ bundle.outputs.hippo_admin_username }
+      hippoPassword: ${ bundle.outputs.hippo_admin_password }
+      bindleUsername: ""
+      bindleServer: ${ bundle.outputs.bindle_url }
+      bindlePassword: ""
+
 upgrade:
   - exec:
       description: World 2.0
