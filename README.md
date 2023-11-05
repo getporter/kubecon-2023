@@ -19,7 +19,7 @@ Porter is already getting some interesting use cases. We’re going to list the 
 
 <img align="left" src="/imgs/microsoft.png" height="108px" width="300px" />
 
-Porter is used by the [Azure TRE](https://microsoft.github.io/AzureTRE/v0.11.0/azure-tre-overview/architecture/) team where Porter bundles are used to create trusted research environments in hospitals and schools across countries.
+ The [Azure TRE](https://microsoft.github.io/AzureTRE/v0.11.0/azure-tre-overview/architecture/) uses Porter Bundles to create Trusted Research Environments. These bundles are used to enable research in medical facilities and schools from the US to all over Europe!
 
 
 <img align="left" src="/imgs/f5-logo.svg" height=51px" width="50px" />
