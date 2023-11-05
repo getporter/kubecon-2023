@@ -2,7 +2,7 @@
 
 ## What is Porter?
 
-Porter is the "glue" for all your existing tools to make packaging, distribution and deployment of your software much easier. With that said, porter is not replacing your existing tools, but rather leveraging them and doing some extra nice things on top of them.
+Porter is the "glue" for all your existing tools to make packaging, distribution and deployment of your software much easier. Porter is not replacing your existing tools, but rather leveraging them and doing some extra nice things on top of them.
 
 Usually when packaging or deploying your software, you need the application code and its configuration files, secrets and some bash scripts to automate the process to some extent. With Porter, your application and all its tools and deployment logic can be packaged into a single installer.
 
