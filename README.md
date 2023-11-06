@@ -17,17 +17,21 @@ If your deployments happen on Kubernetes clusters, you can still use Porter whil
 Porter is already getting some interesting use cases. We’re going to list the ones we know about below. We also encourage users of Porter out there to reach out to us and tell us about how they’re using Porter.
 
 
-<img align="left" src="/imgs/microsoft.png" height="108px" width="300px" />
+<img src="/imgs/microsoft.png" height="108px" width="300px" />
+---
 
  The [Azure TRE](https://microsoft.github.io/AzureTRE/v0.11.0/azure-tre-overview/architecture/) uses Porter Bundles to create Trusted Research Environments. These bundles are used to enable research in medical facilities and schools from the US to all over Europe!
 
 
-<img align="left" src="/imgs/f5-logo.svg" height=51px" width="50px" />
+<img src="/imgs/f5-logo.svg" height="51px" width="50px" />
+---
+
 
 At [F5](https://www.f5.com/) Placeholder text... By leveraging Porter, F5 Networks can streamline their deployment processes, ensuring seamless, reliable, and scalable application delivery while adhering to cloud-native best practices. This adoption demonstrates F5 Networks' dedication to staying at the forefront of technology and optimizing their workflows for enhanced efficiency and agility in the rapidly evolving digital landscape.
 
 
-<img align="left" src="/imgs/kinetica.png" width="300px" />
+<img src="/imgs/kinetica.png" width="300px" />
+---
 
 Kinectica offers its Database on Kubernetes in three configurations: as a Microsoft Azure Marketplace Application, on Amazon AWS, and as a stand-alone installation in Kubernetes. Porter is used to create bundles for their core product and other dependent software. Kinectica bundles are deployed and managed by the Porter Operator and have been used over 55k times.
  
