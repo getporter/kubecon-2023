@@ -1,0 +1,111 @@
+---
+schemaType: Bundle
+schemaVersion: 1.0.1
+name: fermyon-wasm-hello
+version: 0.1.0
+description: ""
+registry: localhost:5000 
+mixins:
+  - arm
+  - az
+  - exec
+  - terraform:
+      clientVersion: 1.2.9
+  - spin
+parameters:
+  - name: location
+    type: string
+    default: EastUS
+  - name: resource_group_name
+    type: string
+    default: porter-terraform
+  - name: storage_account_name
+    type: string
+    default: porterstorage
+  - name: storage_container_name
+    type: string
+    default: portertf
+  - name: storage_rg
+    type: string
+    default: porter-storage
+  - name: database-name
+    type: string
+    default: porter-terraform
+credentials:
+  - name: subscription
+    description: Azure subscription id
+    env: ARM_SUBSCRIPTION_ID
+  - name: tenant
+    description: Azure service principal tenant id
+    env: ARM_TENANT_ID
+  - name: client
+    description: Azure service principal client id
+    env: ARM_CLIENT_ID
+  - name: client-secret
+    description: Azure service principal client secret
+    env: ARM_CLIENT_SECRET
+outputs:
+  - name: dns_host
+    type: string
+    applyTo:
+      - install
+  - name: hippo_admin_username
+    type: string
+    applyTo:
+      - install
+  - name: hippo_admin_password
+    type: string
+    applyTo:
+      - install
+  - name: hippo_url
+    type: string
+    applyTo:
+      - install
+  - name: bindle_url
+    type: string
+    applyTo:
+      - install
+  - name: fqdn
+    type: string
+    applyTo:
+      - install
+state:
+  - name: tfstate
+    path: terraform/terraform.tfstate
+  - name: tfvars
+    path: terraform/terraform.tfvars.json
+
+install:
+  - terraform:
+      logLevel: TRACE
+      outputs:
+        - name: dns_host
+        - name: hippo_admin_username
+        - name: hippo_admin_password
+        - name: hippo_url
+        - name: bindle_url
+        - name: fqdn
+  - exec:
+      description: "Wait for Hippo"
+      command: "bash"
+      arguments:
+        - "waitForHippo.sh"
+        - ${ bundle.outputs.hippo_url }
+  - spin:
+      workDir: hello-kubecon
+      platformURL: "${ bundle.outputs.hippo_url }"
+      hippoUsername: ${ bundle.outputs.hippo_admin_username }
+      hippoPassword: ${ bundle.outputs.hippo_admin_password }
+      bindleUsername: ""
+      bindleServer: ${ bundle.outputs.bindle_url }
+      bindlePassword: ""
+
+upgrade:
+  - exec:
+      description: World 2.0
+      command: ./helpers.sh
+      arguments:
+        - upgrade
+uninstall:
+  - terraform:
+      description: Uninstall
