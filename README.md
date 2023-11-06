@@ -6,7 +6,7 @@ Porter is the "glue" for all your existing tools to make packaging, distribution
 
 Usually when packaging or deploying your software, you need the application code and its configuration files, secrets and some bash scripts to automate the process to some extent. With Porter, your application and all its tools and deployment logic can be packaged into a single installer.
 
-A user of your installer or bundle only needs to know how to run Porter commands. They don't need to understand how the different tools used to make the deployment work. Porter simply glues all these awesome tools together and provides a neat CLI to work with the bundle. The result is a better experience distributing and deploying software.
+A user of your installer or bundle only needs to know how to run Porter commands. They don't need to understand how the different tools used to make the deployment work. Porter simply glues all these awesome tools together and provides a neat CLI to work with the bundle. The result is a better experience distributing and deploying software, whether it's on the cloud, bare metal or even your own PC.
 
 ## How to get started
 We have prepared a small demo to give you a peek into how Porter can enhance your distribution and deployment experience. You can find it here https://getporter.org/docs/quickstart/bundles/
@@ -22,6 +22,7 @@ Porter is already getting some interesting use cases. We’re going to list the 
 
  The [Azure TRE](https://microsoft.github.io/AzureTRE/v0.11.0/azure-tre-overview/architecture/) uses Porter Bundles to create Trusted Research Environments. These bundles are used to enable research in medical facilities and schools from the US to all over Europe!
 
+<img src="/imgs/TRE.png" />
 
 <img src="/imgs/f5-logo.svg" height="51px" width="50px" />
 ---
