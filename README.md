@@ -10,11 +10,34 @@ Usually when packaging or deploying your software, you need the application code
 A user of your installer or bundle only needs to know how to run Porter commands. They don't need to understand how the different tools used to make the deployment work. Porter simply glues all these awesome tools together and provides a neat CLI to work with the bundle. The result is a better experience distributing and deploying software, whether it's on the cloud, bare metal or even your own PC.
 
 ## How to get started
-We have prepared a small demo to give you a peek into how Porter can enhance your distribution and deployment experience. You can find it here https://getporter.org/docs/quickstart/bundles/
+
+### Download Porter 
+
+MacOS
+```
+export VERSION="v1.0.14"
+curl -L https://cdn.porter.sh/$VERSION/install-mac.sh | bash
+```
+Linux
+```
+export VERSION="v1.0.14"
+curl -L https://cdn.porter.sh/$VERSION/install-linux.sh | bash
+```
+Windows
+```
+$VERSION="v1.0.14"
+(New-Object System.Net.WebClient).DownloadFile("https://cdn.porter.sh/$VERSION/install-windows.ps1", "install-porter.ps1")
+.\install-porter.ps1
+```
+
+### Demos! 🕺 
+We have prepared a small demo to give you a peek into how Porter can enhance your distribution and deployment experience. 
+[Check it out here](https://getporter.org/docs/quickstart/bundles/)
+
 
 If your deployments happen on Kubernetes clusters, you can still use Porter while never leaving the Kubernetes way of doing things. To achieve this, Porter is integrated into an operator that executes Porter commands on your behalf when you apply Kubernetes resources onto your cluster. We have prepared a little demo for this as well, https://getporter.org/docs/operator/quickstart/
 
-## Demos!
+
 *cloud*
 
 [Azure, Fermyon, Spin](fermyon-wasm-bundle)
@@ -23,18 +46,17 @@ If your deployments happen on Kubernetes clusters, you can still use Porter whil
 
 [Porter Operator: Argo, Nginx, Otel, Jaeger + more!](https://github.com/bdegeeter/porter-argo-demo/tree/main) 
 
-## Users
+## Adopters
 Porter is already getting some interesting use cases. We’re going to list the ones we know about below. We also encourage users of Porter out there to reach out to us and tell us about how they’re using Porter.
 
 
-<img src="/imgs/microsoft.png" height="108px" width="300px" />
+<img src="/imgs/microsoft.png" height="50px" width="150px" />
 ---
 
  The [Azure TRE](https://microsoft.github.io/AzureTRE/v0.11.0/azure-tre-overview/architecture/) uses Porter Bundles to create Trusted Research Environments. These bundles are used to enable research in medical facilities and schools from the US to all over Europe!
 
-<img src="/imgs/TRE.png" />
 
-<img src="/imgs/f5-logo.svg" height="51px" width="50px" />
+<img src="/imgs/f5-logo.svg" height="50px" width="50px" />
 ---
 
 
