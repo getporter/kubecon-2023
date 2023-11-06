@@ -37,8 +37,6 @@ At [F5](https://www.f5.com/) Placeholder text... By leveraging Porter, F5 Networ
 
 Kinectica offers its Database on Kubernetes in three configurations: as a Microsoft Azure Marketplace Application, on Amazon AWS, and as a stand-alone installation in Kubernetes. Porter is used to create bundles for their core product and other dependent software. Kinectica bundles are deployed and managed by the Porter Operator and have been used over 55k times.
  
-# kubecon-2023
-Information, demos, and all things relevant to kubecon 2023
 
 ## Porter Papers
 
