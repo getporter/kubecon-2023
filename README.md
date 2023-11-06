@@ -14,6 +14,15 @@ We have prepared a small demo to give you a peek into how Porter can enhance you
 
 If your deployments happen on Kubernetes clusters, you can still use Porter while never leaving the Kubernetes way of doing things. To achieve this, Porter is integrated into an operator that executes Porter commands on your behalf when you apply Kubernetes resources onto your cluster. We have prepared a little demo for this as well, https://getporter.org/docs/operator/quickstart/
 
+## Demos!
+*cloud*
+
+[Azure, Fermyon, Spin](fermyon-wasm-bundle)
+
+*local*
+
+[Porter Operator: Argo, Nginx, Otel, Jaeger + more!](https://github.com/bdegeeter/porter-argo-demo/tree/main) 
+
 ## Users
 Porter is already getting some interesting use cases. We’re going to list the ones we know about below. We also encourage users of Porter out there to reach out to us and tell us about how they’re using Porter.
 
