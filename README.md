@@ -60,7 +60,7 @@ Porter is already getting some interesting use cases. We’re going to list the 
 ---
 
 
-At [F5](https://www.f5.com/) Placeholder text... By leveraging Porter, F5 Networks can streamline their deployment processes, ensuring seamless, reliable, and scalable application delivery while adhering to cloud-native best practices. This adoption demonstrates F5 Networks' dedication to staying at the forefront of technology and optimizing their workflows for enhanced efficiency and agility in the rapidly evolving digital landscape.
+At [F5](https://www.f5.com/) By leveraging Porter, F5 Networks can streamline their deployment processes, ensuring seamless, reliable, and scalable application delivery while adhering to cloud-native best practices. This adoption demonstrates F5 Networks' dedication to staying at the forefront of technology and optimizing their workflows for enhanced efficiency and agility in the rapidly evolving digital landscape.
 
 
 <img src="/imgs/kinetica.png" width="300px" />
